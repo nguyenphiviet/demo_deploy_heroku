@@ -1,0 +1,75 @@
+<footer class="footer_area">
+  <div class="footer_widget_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <aside class="f_widget about_widget">
+            <div class="f_w_title">
+              <h4><%= t ".about" %></h4>
+            </div>
+            <p><%= t ".welcome" %></p>
+            <ul>
+              <li>
+                <a href="<%= Settings.follow_link.facebook %>"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="<%= Settings.follow_link.twitter %>"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="<%= Settings.follow_link.google %>"><i class="fa fa-google-plus"></i></a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+        <div class="col-md-3">
+          <aside class="f_widget contact_widget">
+            <div class="f_w_title">
+              <h4><%= t ".contact" %></h4>
+            </div>
+            <p><%= t ".question" %></p>
+            <ul>
+              <li><a href="#"><i class="fa fa-envelope"></i><%= t ".email" %></a></li>
+              <li><a href="#"><i class="fa fa-phone"></i><%= t ".phone" %></a></li>
+              <li><a href="#"><i class="fa fa-map-marker"></i><%= t ".address" %></a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="col-md-3">
+          <aside class="f_widget gallery_widget">
+            <div class="f_w_title">
+              <h4><%= t ".gallery" %></h4>
+            </div>
+            <ul>
+              <li><a href="#"><img src="img/gallery/f-w-gallery/f-w-gallery-1.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="img/gallery/f-w-gallery/f-w-gallery-2.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="img/gallery/f-w-gallery/f-w-gallery-3.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="img/gallery/f-w-gallery/f-w-gallery-4.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="img/gallery/f-w-gallery/f-w-gallery-5.jpg" alt=""><i class="fa fa-search"></i></a></li>
+              <li><a href="#"><img src="img/gallery/f-w-gallery/f-w-gallery-6.jpg" alt=""><i class="fa fa-search"></i></a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copy_right_area">
+    <div class="container">
+      <div class="pull-left">
+        <h5><p>
+          <%= t ".copyright" %> &copy;<script>document.write(new Date().getFullYear());</script> <%= t ".made_with" %> <i class="fa fa-heart-o" aria-hidden="true"></i>
+        </p></h5>
+      </div>
+      <div class="pull-right">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#"><%= t ".home" %></a></li>
+          <li><a href="#"><%= t ".about" %></a></li>
+          <li><a href="#"><%= t ".menu" %></a></li>
+          <li><a href="#"><%= t ".gallery" %></a></li>
+          <li><a href="#"><%= t ".reservation" %></a></li>
+          <li><a href="#"><%= t ".news" %></a></li>
+          <li><a href="#"><%= t ".contact" %></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

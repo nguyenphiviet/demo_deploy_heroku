@@ -1,0 +1,47 @@
+<section class="booking_table_area">
+  <div class="container">
+    <div class="s_white_title">
+      <h3><%= t ".book_table" %></h3>
+      <h2><%= t ".enjoy_meal" %></h2>
+    </div>
+    <div class="row">
+      <%= render "tables/form_search" %>
+    </div>
+  </div>
+</section>
+
+<section class="most_popular_item_area menu_list_page">
+  <div class="container">
+    <div class="s_white_title">
+      <h3 class="red-title"><%= t ".lastest_dishes" %></h3>
+      <h2 class="red-title"><%= t ".today_menu" %></h2>
+    </div>
+    <div class="p_recype_item_main">
+      <div class="row p_recype_item_active">
+        <% if @supports.lastest_dishes.present? %>
+          <% @supports.lastest_dishes.each do |dish| %>
+            <%= render "dish_lastest", dish: dish %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="most_popular_item_area">
+  <div class="container">
+    <div class="s_white_title">
+      <h3><%= t ".popular_dishes" %></h3>
+      <h2><%= t ".today_menu" %></h2>
+    </div>
+    <div class="p_recype_item_main">
+      <div class="row p_recype_item_active">
+        <% if @supports.popular_dishes.present? %>
+          <% @supports.popular_dishes.each do |dish| %>
+            <%= render "dish_popular", dish: dish %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

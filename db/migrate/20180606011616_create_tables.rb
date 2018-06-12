@@ -1,0 +1,14 @@
+class CreateTables < ActiveRecord::Migration[5.0]
+  def change
+    create_table :tables do |t|
+      t.integer :number_of_peoples
+      t.text :description
+      t.datetime :date
+      t.integer :price
+      t.integer :type
+      t.integer :status
+
+      t.timestamps
+    end
+  end
+end

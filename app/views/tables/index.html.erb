@@ -1,0 +1,21 @@
+<section class="most_popular_item_area menu_list_page">
+  <div class="container">
+    <% if @tables.present? %>
+    <div class="popular_filter">
+      <ul>
+        <li data-filter=".break">
+          <%= sort_link @q, :price, t("sort_price") %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="p_recype_item_main">
+      <div class="row p_recype_item_active">
+        <% @tables.each do |table| %>
+          <%= render "table_search", table: table %>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</section>

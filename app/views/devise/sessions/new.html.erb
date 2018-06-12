@@ -1,0 +1,43 @@
+<div class="form_wrapper">
+  <div class="container">
+
+    <ul class="bg-bubbles">
+      <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+    </ul>
+
+    <h1><%= t ".welcome" %></h1>
+
+    <div class="col-sm-6">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <%= f.email_field :email, placeholder: t(".email") %>
+        <%= f.password_field :password, placeholder: t(".password") %>
+
+        <% if devise_mapping.rememberable? %>
+          <%= f.check_box :remember_me, class: "remember_me" %>
+          <%= f.label :remember_me, class: "remember_me" %>
+        <% end %>
+
+        <%= link_to t(".fogot_password"), new_password_path(resource_name) %>
+
+        <%= f.submit t(".button") %>
+      <% end %>
+    </div>
+
+    <div class="col-sm-6 social_link">
+      <%= link_to user_google_oauth2_omniauth_authorize_path,
+        class: "fb btn" do %>
+        <i class="fa fa-google-plus fa-fw"></i> <%= t ".link_google" %>
+      <% end %>
+      <%= link_to user_facebook_omniauth_authorize_path,
+        class: "google btn" do %>
+        <i class="fa fa-facebook fa-fw"></i> <%= t ".link_facebook" %>
+      <% end %>
+      <%= link_to user_twitter_omniauth_authorize_path,
+        class: "twitter btn" do %>
+        <i class="fa fa-twitter fa-fw"></i> <%= t ".link_twitter" %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

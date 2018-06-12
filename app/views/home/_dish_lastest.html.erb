@@ -1,0 +1,20 @@
+<div class="col-md-4 col-sm-6 break snacks">
+  <div class="feature_item">
+    <div class="feature_item_inner">
+      <%= show_image dish %>
+      <div class="icon_hover">
+        <i class="fa fa-search"></i>
+        <i class="fa fa-shopping-cart"></i>
+      </div>
+    </div>
+    <div class="title_text">
+    <div class="feature_left">
+      <%= link_to dish do %>
+        <span><%= dish.name %></span>
+      <% end %>
+    </div>
+      <div class="restaurant_feature_dots"></div>
+      <div class="feature_right"><%= currency_format dish.price %></div>
+    </div>
+  </div>
+</div>

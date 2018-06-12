@@ -1,0 +1,12 @@
+<%= search_form_for @q, url: tables_path, method: :get do |f| %>
+<div class="col-sm-4">
+  <%= f.number_field :number_of_peoples_eq, value: 1, min: 1, max: 100, class: "form-control" %>
+</div>
+<%= f.hidden_field :status_eq, value: Table.statuses[:vacant] %>
+<div class="col-sm-4">
+  <%= f.select :type_table_eq, [[Table.types.keys[0], Table.types["normal"]], [Table.types.keys[1], Table.types["vip"]]], {}, class: "form-control" %>
+</div>
+<div class="col-sm-4">
+  <%= f.submit t("find_table"), class: "btn btn-primary submit_btn" %>
+</div>
+<% end %>

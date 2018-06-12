@@ -1,0 +1,102 @@
+<div id="preloader">
+  <div class="loader absolute-center">
+    <div class="loader__box"><b class="top"></b></div>
+    <div class="loader__box"><b class="top"></b></div>
+    <div class="loader__box"><b class="top"></b></div>
+  </div>
+</div>
+
+<div class="first_header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="header_contact_details">
+          <a href="#"><i class="fa fa-phone"></i>+1 (168) 314 5016</a>
+          <a href="#"><i class="fa fa-envelope-o"></i>+1 (168) 314 5016</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="event_btn_inner">
+          <a class="event_btn" href="table.html"><i class="fa fa-table" aria-hidden="true"></i><%= t ".book" %></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="header_social">
+          <ul>
+          <% if user_signed_in? %>
+            <%= link_to t(".logout"), destroy_user_session_path, method: :delete %>
+          <% else %>
+            <li class="header_social_text">
+              <%= link_to t(".signup"), new_user_registration_path %>
+            </li>
+            <li class="header_social_text">
+              <%= link_to t(".login"), new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to(user_google_oauth2_omniauth_authorize_path) do %>
+                <i class="fa fa-google-plus"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to(user_facebook_omniauth_authorize_path) do %>
+                <i class="fa fa-facebook"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to(user_twitter_omniauth_authorize_path) do %>
+                <i class="fa fa-twitter"></i>
+              <% end %>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="main_menu_area">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <% link_to image_tag("img/logo-1.png"), root_path, class: "navbar-brand" %>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><%= link_to t(".home"), root_path, class: "active" %></li>
+          <li><a href="gallery.html"><%= t ".about" %></a></li>
+          <li class="dropdown submenu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= t ".menu" %><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="menu-grid.html"><%= t ".menu_grid" %></a></li>
+              <li><a href="menu-list.html"><%= t ".menu_list" %></a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void();"><%= t ".table" %></a></li>
+          <li><a href="javascript:void();"><%= t ".contact" %></a></li>
+          <!-- <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li> -->
+          <li class="search-btn"><a href="javascript:void();"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="banner_area">
+  <div class="container">
+    <div class="banner_content">
+      <a href="#">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+      <% end %>
+      </a>
+    </div>
+  </div>
+</section>
